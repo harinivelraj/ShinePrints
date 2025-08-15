@@ -1,4 +1,5 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { StarBackground } from "@/components/StarBackground";
 import { Home } from "./pages/Home";
 import { About } from "./pages/About";
 import { Specialties } from "./pages/Specialties";
@@ -6,13 +7,13 @@ import { Corporate } from "./pages/Corporate";
 import { NotFound } from "./pages/NotFound";
 import { Toaster } from "@/components/ui/toaster";
 import { Products } from "./pages/Products";
-// Removed unused Business import; using BusinessCards for business pages
 import { Business } from "./pages/Business";
 import { Blog } from "./pages/Blog";
 
 function App() {
   return (
     <>
+      <StarBackground />
       <Toaster />
       <BrowserRouter>
         <Routes>
