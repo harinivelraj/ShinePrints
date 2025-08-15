@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 // id, size, x, y, opacity, animationDuration
 // id, size, x, y, delay, animationDuration
 
-export const StarBackground = () => {
+export const StarBackground = ({ position = "fixed" }) => {
   const [stars, setStars] = useState([]);
   const [meteors, setMeteors] = useState([]);
 
@@ -60,7 +60,7 @@ export const StarBackground = () => {
   };
 
   return (
-    <div className="fixed inset-0 overflow-hidden pointer-events-none z-0">
+    <div className={`${position} inset-0 overflow-hidden pointer-events-none z-0`}>
       {stars.map((star) => (
         <div
           key={star.id}

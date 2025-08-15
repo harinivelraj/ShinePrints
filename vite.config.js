@@ -1,11 +1,17 @@
 import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react";
-import tailwindcss from "@tailwindcss/vite";
+// Tailwind CSS is processed via postcss.config.cjs
 import path from "path";
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  plugins: [react(), tailwindcss()],
+  base: '/ShinePrints/',
+  plugins: [
+    react(),
+    // tailwindcss() removed; using PostCSS config for Tailwind processing
+  ],
+  // Include uppercase JPG assets
+  assetsInclude: ["**/*.JPG"],
   resolve: {
     alias: {
       "@": path.resolve(__dirname, "./src"),
